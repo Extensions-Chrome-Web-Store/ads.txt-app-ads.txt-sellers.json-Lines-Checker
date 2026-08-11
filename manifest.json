@@ -1,0 +1,25 @@
+{
+   "action": {
+      "default_popup": "ui/popup/popup.html",
+      "default_title": "Lines Checker"
+   },
+   "background": {
+      "service_worker": "background/background.js"
+   },
+   "content_scripts": [ {
+      "js": [ "content/overlay.js" ],
+      "matches": [ "*://*/ads.txt*", "*://*/app-ads.txt*", "*://*/*/ads.txt*", "*://*/*/app-ads.txt*" ],
+      "run_at": "document_idle"
+   } ],
+   "description": "Validate ads.txt and app-ads.txt files, cross-reference seller IDs with sellers.json, detect errors, and analyze SPO metrics",
+   "host_permissions": [ "http://*/*", "https://*/*" ],
+   "icons": {
+      "128": "assets/icons/icon128.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwg1e+nDtIGX9tl0d/PkhZZUGWu1K6sWwWZ7YPFnELlK+aDdgCNSHoil6e37z+LZ+NDTXc9i4IU5+8fTwE3lxv/MTIHOo6pSbl9E2TvULFwtrxzDR5mpxZxF6tN2dUrqDjKPg2cJ7amuKbI409DRmDhxmPamoA5IzMNfT4b0BLnqMc1iPVXRyDZeuOxPNyM8NsYBLtlgPmWty7fcnN2EwulZ7b4LWj6RQ0VcnpJqr7TcZJHQC+p/1amlzSNgc+X/sWMW4LBfxsXgVPWiQSK3sN48r2F/u5J3/uVZhvnBvOLXspzl1U6nCo5JiC2AlFxL1IGr3Gz7TF2vJj84hHILexwIDAQAB",
+   "manifest_version": 3,
+   "name": "adWMG Chrome Extension: ads.txt/sellers.json",
+   "permissions": [ "tabs", "storage", "scripting", "unlimitedStorage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "7.4.2"
+}
